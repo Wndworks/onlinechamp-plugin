@@ -1,0 +1,24 @@
+name: Zip Repository
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  zip:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Code uitchecken
+        uses: actions/checkout@v3
+
+      - name: ZIP maken
+        run: |
+          zip -r onlinechamp-plugin.zip . -x "*.git*"
+
+      - name: ZIP uploaden
+        uses: actions/upload-artifact@v3
+        with:
+          name: repository-zip
+          path: onlinechamp-plugin.zip
