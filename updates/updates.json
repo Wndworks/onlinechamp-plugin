@@ -1,6 +1,6 @@
 {
-    "./onlinechamp.php":{
+    "onlinechamp/onlinechamp.php":{
         "version":"1.1",
-        "package":"https://github.com/Wndworks/onlinechamp-plugin/raw/refs/heads/main/zip/onlinechamp-plugin.zip"
+        "package":"https://github.com/Wndworks/onlinechamp-plugin/raw/refs/heads/main/zip/onlinechamp.zip"
     }
 }

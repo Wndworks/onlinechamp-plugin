@@ -11,14 +11,6 @@ License: GPL2
 Text Domain: onlinechamp
 */
 
-// Hook to 'wp_footer' to add content in the footer
-function plugin_footer_message() {
-    echo '<p>Powered by OnlineChamp</p>';
-}
-
-// Register the function to execute in the footer
-add_action('wp_footer', 'plugin_footer_message');
-
 function insert_scripts() {
 
     // Get the file path for 'js/main.js' in the plugin
