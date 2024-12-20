@@ -1,6 +1,21 @@
 {
-    "onlinechamp/onlinechamp.php":{
-        "version":"1.1",
-        "package":"https://github.com/Wndworks/onlinechamp-plugin/raw/refs/heads/main/zip/onlinechamp.zip"
-    }
+	"name" : "OnlineChamp Extended",
+	"slug" : "onlinechamp",
+	"author" : "<a href='https://onlinechamp.nl'>OnlineChamp</a>",
+	"author_profile" : "https://onlinechamp.nl",
+	"version" : "2.0",
+	"download_url" : "https://github.com/Wndworks/onlinechamp-plugin/raw/refs/heads/main/zip/onlinechamp.zip",
+	"requires" : "5.8",
+	"tested" : "5.8",
+	"requires_php" : "7.4",
+	"last_updated" : "2023-01-30 02:10:00",
+	"sections" : {
+		"description" : "This plugin is designed to enhance and extend the functionality of WordPress themes developed by OnlineChamp, providing optimizations for your website.",
+		"installation" : "Click the activate button and that's it.",
+		"changelog" : ""
+	},
+	"banners" : {
+		"low" : "https://rudrastyh.com/wp-content/uploads/updater/banner-772x250.jpg",
+		"high" : "https://rudrastyh.com/wp-content/uploads/updater/banner-1544x500.jpg"
+	}
 }
