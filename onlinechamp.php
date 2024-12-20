@@ -3,17 +3,27 @@
 Plugin Name: OnlineChamp
 Plugin URI: https://onlinechamp.nl
 Description: OnlineChamp theme extended
-Version: 1.3
+Version: 1.4
 Author: OnlineChamp
 Author URI: https://onlinechamp.nl
 License: GPL2
 Text Domain: onlinechamp
 */
 
-require_once plugin_dir_path( __FILE__ ) . 'includes/insert-scripts.php';
+//Set global plugin url
+if ( ! defined( 'PLUGIN_URL' ) ) {
+    define( 'PLUGIN_URL', plugin_dir_url( __FILE__ ) );
+}
+
+//Set global plugin path
+if ( ! defined( 'PLUGIN_PATH' ) ) {
+    define( 'PLUGIN_PATH', plugin_dir_path( __FILE__ ) );
+}
+
+require_once PLUGIN_PATH . 'includes/insert-scripts.php';
 
 /** Update checker  **/
-require plugin_dir_path( __FILE__ ) . 'includes/plugin-update-checker/plugin-update-checker.php';
+require PLUGIN_PATH . 'includes/plugin-update-checker/plugin-update-checker.php';
 use YahnisElsts\PluginUpdateChecker\v5\PucFactory;
 
 $myUpdateChecker = PucFactory::buildUpdateChecker(
