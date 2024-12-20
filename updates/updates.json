@@ -1,0 +1,8 @@
+{
+    "name" : "OnlineChamp Extended",
+    "version" : "2.0",
+    "download_url" : "https://github.com/Wndworks/onlinechamp-plugin/raw/refs/heads/main/zip/onlinechamp-plugin.zip",
+    "sections" : {
+        "description" : "OnlineChamp Extended"
+    }
+}

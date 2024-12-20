@@ -42,3 +42,13 @@ function insert_scripts() {
 }
 
 add_action( 'enqueue_block_editor_assets', 'insert_scripts' );
+
+//Updates
+require './plugin-update-checker/plugin-update-checker.php';
+use YahnisElsts\PluginUpdateChecker\v5\PucFactory;
+
+$myUpdateChecker = PucFactory::buildUpdateChecker(
+	'https://github.com/Wndworks/onlinechamp-plugin/raw/refs/heads/main/updates/updates.json',
+	__FILE__, //Full path to the main plugin file or functions.php.
+	'unique-plugin-or-theme-slug'
+);
