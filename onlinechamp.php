@@ -2,6 +2,7 @@
 /*
 Plugin Name: OnlineChamp
 Plugin URI: https://onlinechamp.nl
+Update URI:  https://my-domain.com/custom-plugins/plugins-info.json
 Description: OnlineChamp theme extended
 Version: 1.0
 Author: OnlineChamp
