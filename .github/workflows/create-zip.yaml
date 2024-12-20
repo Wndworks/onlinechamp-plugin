@@ -19,16 +19,15 @@ jobs:
 
       - name: Create GitHub Release
         id: create_release
-        uses: actions/create-release@v1
+        uses: actions/create-release@v1  # You can also use v1.0.0 here, which is the latest stable release
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          tag_name: v1.0.${{ github.run_number }}  # Auto-generated version based on run number
+          tag_name: v1.0.${{ github.run_number }}  # Tag name dynamically generated
           release_name: "Release v1.0.${{ github.run_number }}"
           draft: false
           prerelease: false
 
       - name: Upload ZIP to Release
-        uses: actions/upload-release-asset@v1
+        uses: actions/upload-release-asset@v1  # Or v1.0.0
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
           asset_path: onlinechamp-plugin.zip
