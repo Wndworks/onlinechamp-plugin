@@ -3,7 +3,7 @@
 Plugin Name: OnlineChamp
 Plugin URI: https://onlinechamp.nl
 Description: OnlineChamp theme extended
-Version: 1.1
+Version: 1.2
 Author: OnlineChamp
 Author URI: https://onlinechamp.nl
 License: GPL2
