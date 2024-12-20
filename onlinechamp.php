@@ -10,6 +10,23 @@ License: GPL2
 Text Domain: onlinechamp
 */
 
+//Updates
+require 'plugin-update-checker/plugin-update-checker.php';
+use YahnisElsts\PluginUpdateChecker\v5\PucFactory;
+
+$myUpdateChecker = PucFactory::buildUpdateChecker(
+	'https://github.com/Wndworks/onlinechamp-plugin',
+	__FILE__,
+	'onlinechamp-extended'
+);
+
+//Set the branch that contains the stable release.
+$myUpdateChecker->setBranch('main');
+
+//Optional: If you're using a private repository, specify the access token like this:
+//$myUpdateChecker->setAuthentication('your-token-here');
+
+
 function insert_scripts() {
 
     // Get the file path for 'js/main.js' in the plugin
