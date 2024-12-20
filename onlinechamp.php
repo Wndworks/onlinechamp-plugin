@@ -2,7 +2,7 @@
 /*
 Plugin Name: OnlineChamp
 Plugin URI: https://onlinechamp.nl
-Update URI:  https://my-domain.com/custom-plugins/plugins-info.json
+Update URI: https://raw.githubusercontent.com/Wndworks/onlinechamp-plugin/refs/heads/main/updates/updates.json
 Description: OnlineChamp theme extended
 Version: 1.0
 Author: OnlineChamp
@@ -51,3 +51,32 @@ function insert_scripts() {
 }
 
 add_action( 'enqueue_block_editor_assets', 'insert_scripts' );
+
+//Updates
+if( ! function_exists( 'my_plugin_check_for_updates' ) ){
+    
+    function my_plugin_check_for_updates( $update, $plugin_data, $plugin_file ){
+        
+        static $response = false;
+        
+        if( empty( $plugin_data['UpdateURI'] ) || ! empty( $update ) )
+            return $update;
+        
+        if( $response === false )
+            $response = wp_remote_get( $plugin_data['UpdateURI'] );
+        
+        if( empty( $response['body'] ) )
+            return $update;
+        
+        $custom_plugins_data = json_decode( $response['body'], true );
+        
+        if( ! empty( $custom_plugins_data[ $plugin_file ] ) )
+            return $custom_plugins_data[ $plugin_file ];
+        else
+            return $update;
+        
+    }
+    
+    add_filter('update_plugins_github.com', 'my_plugin_check_for_updates', 10, 3);
+    
+}
