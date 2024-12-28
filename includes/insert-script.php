@@ -3,7 +3,7 @@
 function insert_scripts() {
 
     // Get the file path for 'js/main.js' in the plugin
-    $file_path = PLUGIN_PATH . '../assets/js/main.js';
+    $file_path = PLUGIN_PATH . '../dist/editor.js';
 
     if ( file_exists( $file_path ) ) {
         // Get the last modified time of the file to use as the version
@@ -15,7 +15,7 @@ function insert_scripts() {
     // Enqueue the script with the correct URL and version
     wp_enqueue_script(
         'onlinechamp-plugin-js',                            // Handle for the script
-        PLUGIN_URL . 'assets/js/main.js',           // URL to the script file
+        PLUGIN_URL . 'dist/editor.js',           // URL to the script file
         [ 'wp-plugins', 'wp-edit-post', 'wp-element', 'wp-data', 'wp-dom-ready' ], // Dependencies
         $file_time,                                         // Version based on file modification time
         true                                                // Load the script in the footer

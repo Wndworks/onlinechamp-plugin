@@ -20,7 +20,8 @@ if ( ! defined( 'PLUGIN_PATH' ) ) {
     define( 'PLUGIN_PATH', plugin_dir_path( __FILE__ ) );
 }
 
-require_once PLUGIN_PATH . 'includes/insert-scripts.php';
+require_once PLUGIN_PATH . 'includes/insert-script.php';
+require_once PLUGIN_PATH . 'includes/insert-css.php';
 
 /** Update checker  **/
 require PLUGIN_PATH . 'includes/plugin-update-checker/plugin-update-checker.php';

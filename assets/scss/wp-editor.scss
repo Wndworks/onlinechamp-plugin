@@ -1,0 +1,6 @@
+/* This SCSS file provides custom styling overrides for the WordPress editor.*/
+
+@use './wp-editor/root-container' as *;
+@use './wp-editor/post-title' as *;
+@use './wp-editor/inserter-button' as *;
+@use './wp-editor/block' as *;

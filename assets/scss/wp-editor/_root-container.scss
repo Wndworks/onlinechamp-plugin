@@ -1,0 +1,18 @@
+.is-root-container {
+    border: 10px solid black;
+    border-radius: 10px;
+    border-top-width: 50px;
+}
+  
+.is-root-container.is-tablet-preview,
+.is-root-container.is-mobile-preview {
+margin-top: 40px;
+}
+
+html :where(.wp-block) {
+max-width: none;
+}
+
+.editor-styles-wrapper {
+    margin: 0 auto !important;
+}
