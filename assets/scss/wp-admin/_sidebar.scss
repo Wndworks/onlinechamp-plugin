@@ -1,4 +1,8 @@
+:root {
+    --sidebar-width: 340px;
+}
+
 .interface-complementary-area,
 .interface-complementary-area__fill {
-    width: 340px!important;
+    width: var(--sidebar-width) !important;
 }

@@ -1,2 +1,2 @@
 import './ux/open-sidebar.jsx';
-import './ux/add-pattern-button.jsx';
+import './ux/add-buttons.jsx';
