@@ -1,30 +1,23 @@
 /**
- * Block Editor Enhancements Script
+ * Block Editor Sidebar Auto-Open Script
  * 
- * - Automatically opens the block settings sidebar when a block is selected.
- * - Ensures the sidebar only opens once per block selection to prevent redundant actions.
- * - Tracks the selected block using `clientId` for efficient state management.
- * - Integrates with WordPress APIs (`wp.data`) for seamless editor interaction.
- * - Optimized for performance in large or complex editors.
+ * Automatically opens the block settings sidebar when a block is clicked/selected.
  */
 
-// Track the last selected block to avoid repeated operations
+// Track the last selected block to prevent redundant actions
 let lastSelectedBlockId = null;
 
 wp.data.subscribe(() => {
     // Get the currently selected block
     const selectedBlock = wp.data.select('core/block-editor').getSelectedBlock();
+    const sidebarOpen = wp.data.select('core/edit-post').isInserterOpened();
 
-    // Check if the selected block has changed
-    if (selectedBlock && selectedBlock.clientId !== lastSelectedBlockId) {
+    if (selectedBlock && selectedBlock.clientId !== lastSelectedBlockId && !sidebarOpen) {
+        // Update the last selected block ID
         lastSelectedBlockId = selectedBlock.clientId;
 
-        // Check if the sidebar is already open
-        const isSidebarOpen = wp.data.select("core/edit-post").isEditorPanelOpened("edit-post/block");
-
-        if (!isSidebarOpen) {
-            wp.data.dispatch("core/edit-post").openGeneralSidebar('edit-post/block'); // Open the Block settings panel
-        }
+        // Open the block settings sidebar
+        wp.data.dispatch("core/edit-post").openGeneralSidebar('edit-post/block');
     }
 
     // Reset if no block is selected
